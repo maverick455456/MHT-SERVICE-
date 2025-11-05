@@ -108,6 +108,29 @@
     font-weight:700;
   }
 
+  /* Popup Animation */
+  .popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.8);
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(15px);
+    padding:20px 35px;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(255,0,200,0.4);
+    font-weight:600;
+    opacity:0;
+    color:#fff;
+    z-index:200;
+    transition:all 0.3s ease;
+  }
+  .popup.active{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+  }
+
   main{
     padding:25px 20px;
     text-align:center;
@@ -170,16 +193,19 @@
 <!-- Sidebar Navigation -->
 <div class="sidebar" id="sidebar">
   <div class="close-btn" id="closeBtn">×</div>
-  <a href="#">Login</a>
-  <a href="#">Home</a>
-  <a href="#">Services</a>
-  <a href="#">FAQ</a>
-  <a href="#">Team</a>
-  <a href="#">About</a>
-  <a href="#">Contact</a>
-  <a href="#">Privacy</a>
-  <a href="#">Terms</a>
+  <a href="https://www.freebots.store/r/NIPUNO6D43" target="_blank">Login</a>
+  <a href="https://www.freebots.store" target="_blank">Home</a>
+  <a href="https://www.freebots.store/services" target="_blank">Services</a>
+  <a href="https://www.freebots.store/faq" target="_blank">FAQ</a>
+  <a href="https://www.freebots.store/team" target="_blank">Team</a>
+  <a href="https://www.freebots.store/about" target="_blank">About</a>
+  <a href="https://www.freebots.store/contact" target="_blank">Contact</a>
+  <a href="https://www.freebots.store/privacy" target="_blank">Privacy</a>
+  <a href="https://www.freebots.store/terms" target="_blank">Terms</a>
 </div>
+
+<!-- Popup -->
+<div class="popup" id="popup">Loading...</div>
 
 <main>
   <div class="card">
@@ -199,7 +225,7 @@
 </main>
 
 <footer>
-  © 2025 DILA LK — Tech Web<br>
+  © 2025 MR NIPUN OFC — Tech Web<br>
   Automated Whatsapp & Your Life.<br><br>
   <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a>
 </footer>
@@ -208,11 +234,23 @@
   const menuBtn = document.getElementById('menuBtn');
   const sidebar = document.getElementById('sidebar');
   const closeBtn = document.getElementById('closeBtn');
+  const popup = document.getElementById('popup');
 
   menuBtn.addEventListener('click', ()=> sidebar.classList.add('active'));
   closeBtn.addEventListener('click', ()=> sidebar.classList.remove('active'));
-  sidebar.addEventListener('click', e=>{
-    if(e.target.tagName === 'A'){ sidebar.classList.remove('active'); }
+
+  // popup effect for links
+  document.querySelectorAll('.sidebar a').forEach(link=>{
+    link.addEventListener('click', e=>{
+      e.preventDefault();
+      const url = link.getAttribute('href');
+      popup.classList.add('active');
+      sidebar.classList.remove('active');
+      setTimeout(()=>{
+        popup.classList.remove('active');
+        window.open(url, '_blank');
+      },1200);
+    });
   });
 </script>
 
