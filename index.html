@@ -1,135 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MONEY HEIST OFC SERVICE 🐦‍🔥</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    font-family:'Poppins',sans-serif;
-    background: radial-gradient(circle at top,#6c0078,#1a001f 80%);
-    color:#fff;
-    min-height:100vh;
-  }
-  /* Header */
-  header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:16px 22px;
-    background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    font-weight:600;
-    letter-spacing:.5px;
-  }
-  header span{
-    display:flex;
-    align-items:center;
-    gap:6px;
-  }
-  header .dot{
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:#a65cff;
-    box-shadow:0 0 8px #a65cff;
-  }
-  header .menu{
-    width:26px;
-    height:20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    cursor:pointer;
-  }
-  header .menu div{
-    width:100%;
-    height:3px;
-    background:#fff;
-    border-radius:2px;
-  }
-  main{
-    padding:25px 20px;
-    text-align:center;
-  }
-  .card{
-    max-width:430px;
-    margin:0 auto 25px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:20px;
-    box-shadow:0 0 25px rgba(255,0,170,0.25);
-    padding:20px 18px;
-  }
-  h2{
-    font-size:22px;
-    font-weight:700;
-    margin-bottom:10px;
-  }
-  .line{
-    width:60px;
-    height:3px;
-    background:linear-gradient(90deg,#ff48c4,#9f51ff);
-    margin:0 auto 15px;
-    border-radius:5px;
-  }
-  .link{
-    display:block;
-    margin:10px auto;
-    padding:10px 16px;
-    border-radius:12px;
-    font-weight:600;
-    color:#fff;
-    text-decoration:none;
-    background:linear-gradient(90deg,#ff48c4,#9f51ff);
-    box-shadow:0 0 18px rgba(255,0,170,0.3);
-    transition:all .2s;
-  }
-  .link:hover{transform:scale(1.05);}
-  footer{
-    text-align:center;
-    font-size:13px;
-    opacity:0.85;
-    margin-bottom:15px;
-  }
-  footer a{color:#b084ff;text-decoration:none;margin:0 5px;}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MONEY HEIST MD - Free Bot Service</title>
+  <style>
+    /* Background gradient */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1a0026, #44004f, #5e006a);
+      color: #fff;
+      min-height: 100vh;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Fixed top banner */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 1000;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-btn {
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .menu-btn span {
+      width: 20px;
+      height: 2px;
+      background: #fff;
+      display: block;
+      position: relative;
+    }
+
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background: #fff;
+    }
+
+    .menu-btn span::before {
+      top: -6px;
+    }
+
+    .menu-btn span::after {
+      bottom: -6px;
+    }
+
+    /* Main container */
+    .container {
+      margin-top: 100px;
+      padding: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(15px);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    .link {
+      display: block;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .link:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <span><div class="dot"></div> MONEY HEIST MD / DILA LK</span>
-  <div class="menu">
-    <div></div><div></div><div></div>
-  </div>
-</header>
+  <header>
+    <div class="title">🔮 MONEY HEIST MD / DILA LK</div>
+    <div class="menu-btn">
+      <span></span>
+    </div>
+  </header>
 
-<main>
-  <div class="card">
-    <h2>FREE BOT SERVICE 🪄</h2>
-    <div class="line"></div>
-    <a href="https://www.freebots.store/r/MONEYH2284" class="link" target="_blank">Create Account</a>
-    <a href="https://www.facebook.com/share/v/1BE5gHCLLK/" class="link" target="_blank">Deploy Tutorial (FB)</a>
-    <a href="https://youtu.be/hyIMnMBY1eY?si=3TpxTNOFVoPWZdOs" class="link" target="_blank">Deploy Video (YouTube)</a>
+  <div class="container">
+
+    <div class="card">
+      <h2>📌 FREE BOT SERVICE</h2>
+      <p><b>• Create Account :</b></p>
+      <a href="https://www.freebots.store/r/MONEYH2284" class="link">https://www.freebots.store/r/MONEYH2284</a>
+      <p><b>• Deploy Tutorial :</b></p>
+      <a href="https://www.facebook.com/share/v/1BE5gHCLLK/" class="link">Facebook Deploy Video</a>
+      <p><b>• Deploy YouTube Video :</b></p>
+      <a href="https://youtu.be/hyIMnMBY1eY?si=3TpxTNOFVoPWZdOs" class="link">YouTube Tutorial</a>
+    </div>
+
+    <div class="card">
+      <h2>📌 CHANNEL REACT SERVICE</h2>
+      <p><b>• React Pack Activated :</b></p>
+      <a href="https://www.facebook.com/share/v/1D8LDo49ur/" class="link">Facebook React Pack</a>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>CHANNEL REACT SERVICE 💎</h2>
-    <div class="line"></div>
-    <a href="https://www.facebook.com/share/v/1D8LDo49ur/" class="link" target="_blank">React Pack Activated</a>
-    <p style="margin-top:15px;font-size:14px;">Coins: <b>1010130</b></p>
-  </div>
-</main>
-
-<footer>
-  © 2025 DILA LK — Tech Web<br>
-  Automated Whatsapp & Your Life.<br><br>
-  <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a>
-</footer>
+  <footer>
+    © 2025 DILA LK — Tech Web <br>
+    Automated WhatsApp & Your Life.<br>
+    Privacy • Terms • Contact
+  </footer>
 
 </body>
 </html>
