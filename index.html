@@ -1,173 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MONEY HEIST MD - Free Bot Service</title>
   <style>
-    /* Background gradient */
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    * {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #1a0026, #44004f, #5e006a);
-      color: #fff;
-      min-height: 100vh;
-      backdrop-filter: blur(10px);
-    }
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }body {
+  background: linear-gradient(135deg, #2b0034, #8a006f, #d4007f);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    /* Fixed top banner */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 65px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 25px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      z-index: 1000;
-    }
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    .title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-    }
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  z-index: 1000;
+}
 
-    .menu-btn {
-      width: 35px;
-      height: 35px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+header h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-    .menu-btn:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
+.menu-btn {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-    .menu-btn span {
-      width: 20px;
-      height: 2px;
-      background: #fff;
-      display: block;
-      position: relative;
-    }
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
 
-    .menu-btn span::before,
-    .menu-btn span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 20px;
-      height: 2px;
-      background: #fff;
-    }
+main {
+  margin-top: 100px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
 
-    .menu-btn span::before {
-      top: -6px;
-    }
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
 
-    .menu-btn span::after {
-      bottom: -6px;
-    }
+.glass-card h2 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
 
-    /* Main container */
-    .container {
-      margin-top: 100px;
-      padding: 25px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.link-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(15px);
-      transition: transform 0.3s;
-    }
+.link-box:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.link-box code, .link-box a {
+  color: #ff7bcd;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.3rem;
-      color: #fff;
-    }
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 
-    .link {
-      display: block;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: 600;
-      margin-top: 10px;
-      transition: background 0.3s;
-    }
-
-    .link:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="title">🔮 MONEY HEIST MD / DILA LK</div>
-    <div class="menu-btn">
-      <span></span>
-    </div>
-  </header>
-
-  <div class="container">
-
-    <div class="card">
+    <h1>🐦‍🔥 MONEY HEIST MD / DILA LK</h1>
+    <div class="menu-btn">☰</div>
+  </header>  <main>
+    <div class="glass-card">
       <h2>📌 FREE BOT SERVICE</h2>
-      <p><b>• Create Account :</b></p>
-      <a href="https://www.freebots.store/r/MONEYH2284" class="link">https://www.freebots.store/r/MONEYH2284</a>
-      <p><b>• Deploy Tutorial :</b></p>
-      <a href="https://www.facebook.com/share/v/1BE5gHCLLK/" class="link">Facebook Deploy Video</a>
-      <p><b>• Deploy YouTube Video :</b></p>
-      <a href="https://youtu.be/hyIMnMBY1eY?si=3TpxTNOFVoPWZdOs" class="link">YouTube Tutorial</a>
-    </div>
+      <p><strong>Create Account:</strong></p>
+      <div class="link-box"><code>https://www.freebots.store/r/MONEYH2284</code></div><p><strong>Deploy Tutorial (Facebook):</strong></p>
+  <div class="link-box"><a href="https://www.facebook.com/share/v/1BE5gHCLLK/" target="_blank">https://www.facebook.com/share/v/1BE5gHCLLK/</a></div>
 
-    <div class="card">
-      <h2>📌 CHANNEL REACT SERVICE</h2>
-      <p><b>• React Pack Activated :</b></p>
-      <a href="https://www.facebook.com/share/v/1D8LDo49ur/" class="link">Facebook React Pack</a>
-    </div>
+  <p><strong>Deploy Video (YouTube):</strong></p>
+  <div class="link-box"><a href="https://youtu.be/hyIMnMBY1eY?si=3TpxTNOFVoPWZdOs" target="_blank">https://youtu.be/hyIMnMBY1eY?si=3TpxTNOFVoPWZdOs</a></div>
+</div>
 
-  </div>
+<div class="glass-card">
+  <h2>📌 CHANNEL REACT SERVICE</h2>
+  <p><strong>React Pack Activated:</strong></p>
+  <div class="link-box"><a href="https://www.facebook.com/share/v/1D8LDo49ur/" target="_blank">https://www.facebook.com/share/v/1D8LDo49ur/</a></div>
+</div>
 
-  <footer>
-    © 2025 DILA LK — Tech Web <br>
-    Automated WhatsApp & Your Life.<br>
-    Privacy • Terms • Contact
-  </footer>
+<footer>
+  <p>© 2025 MONEY HEIST OFFICIAL — Tech Web<br>Automated WhatsApp & Your Life.</p>
+</footer>
 
+  </main>
 </body>
 </html>
